@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATN's TOY STORE</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <div class="menu">
+        <h1>
+            <center>ATN's TOY STORE</center>
+        </h1>
+        <form action="/add" method="POST">
+            Name <input type="text" name="txtName">
+            <span style="color: red;">{{errorFw}}</span>
+            <br>
+            Price <input type="text" name="txtPrice">
+            <br>
+            <span style="color: red;">{{errorMsg}}</span>
+            <span style="color: red;">{{errorPri}}</span>
+            <br>
+            <input type="submit" value="Add Product">
+        </form>
+        <br>
+        <br>
+        <br>
+        <table border="3" class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            {{#each data}}
+            <tr>
+                <td>
+                    <center>{{_id}}</center>
+                </td>
+                <td>
+                    <center>{{Name}}</center>
+                </td>
+                <td>
+                    <center>{{Price}}$</center>
+                </td>
+                <td>
+                    <center><a href="/delete?id={{_id}}">Delete</a></center>
+                </td>
+                <td>
+                    <center><a href="/edit?id={{_id}}">Edit</a></center>
+                </td>
+            </tr>
+            {{/each}}
+    </div>
+
+    {{!-- <div class="footer">
+        <div class="about">
+            <h2>About Us</h2>
+            <p id="right">“We always learn from the competitor but we never copy. For us, copying means dying ”</p>
+        </div>
+        <div class="contact">
+            <h2>Contacts</h2>
+            <p><strong>Email:</strong> khanhtqgch190663@fpt.edu.vn</p>
+            <p><strong>Tel:</strong> 0975408219</p>
+        </div>
+        <div class="link">
+            <h2>Link</h2>
+            <p>zmisthemes &copy; Right Reserved</p>
+        </div>
+    </div> --}}
+</body>
+
+</html>
