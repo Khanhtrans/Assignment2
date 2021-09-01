@@ -16,12 +16,14 @@
         </h1>
         <form action="/add" method="POST">
             Name <input type="text" name="txtName">
-            <span style="color: red;">{{errorFw}}</span>
+            {{!-- <span style="color: red;">{{errorFw}}</span> --}}
             <br>
             Price <input type="text" name="txtPrice">
             <br>
             <span style="color: red;">{{errorMsg}}</span>
-            <span style="color: red;">{{errorPri}}</span>
+            {{!-- <span style="color: red;">{{errorPri}}</span> --}}
+            <br>
+            Category <input type="text" name="txtCategory">
             <br>
             <input type="submit" value="Add Product">
         </form>
@@ -33,8 +35,8 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Category</th>
                 <th>Delete</th>
-                <th>Update</th>
             </tr>
             {{#each data}}
             <tr>
@@ -48,10 +50,10 @@
                     <center>{{Price}}$</center>
                 </td>
                 <td>
-                    <center><a href="/delete?id={{_id}}">Delete</a></center>
+                    <center>{{Category}}</center>
                 </td>
                 <td>
-                    <center><a href="/edit?id={{_id}}">Edit</a></center>
+                    <center><a href="/delete?id={{_id}}">Delete</a></center>
                 </td>
             </tr>
             {{/each}}
